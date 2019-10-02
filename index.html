@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h4>Javascript Version</h4>
+    
+    <textarea id="newOne" placeholder="Enter your text here" style="width: 200px; height:200px ;"></textarea>
+    <button onclick="clickFunc()">Click me</button>   
+    
+    <h4>Compiled With Babel</h4>
+    
+    <div id="output" readonly></div> 
+    
+
+    <!-- Babel Loading -->
+    <!-- <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script> -->
+    <script src="babel.js"> </script>
+
+    <!-- Babel Conversion -->
+    <script type="text/babel">
+    function clickFunc(){
+        var input = document.getElementById('newOne').value;
+        console.log(input);
+        document.getElementById('output').innerText=  Babel.transform(input, { presets: ['es2015']}).code;
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
