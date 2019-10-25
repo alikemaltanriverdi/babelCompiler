@@ -15,25 +15,25 @@
     
     <h4>Compiled With Babel</h4>
     
-    <div id="output" readonly></div> 
+    <div id="output"></div> 
     
 
     <!-- Babel Loading -->
     <!-- <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script> -->
-    <script src="babel.js"> </script>
+    <script src="babel.js"></script> 
+    
 
-    <!-- Babel Conversion -->
+    <!-- Babel Conversion/ Compilition -->
     <script type="text/babel">
-    function clickFunc(){
-        var input = document.getElementById('newOne').value;
-        console.log(input);
-        document.getElementById('output').innerText=  Babel.transform(input, { presets: ['es2015']}).code;
-        }
+        function clickFunc(){
+            const input = document.getElementById('newOne').value;
+            console.log(input);
+            
+            const output = Babel.transform(input, { presets: ['es2015',{minified:true}],
+"comments": false}).code;
+            console.log(output);
+            document.getElementById('output').innerText=  output;
+            }
     </script>
 </body>
 </html>
-
-
-
-
-
