@@ -27,11 +27,11 @@
     <script type="text/babel">
         function clickFunc(){
             const input = document.getElementById('newOne').value;
-            console.log(input);
+            console.log("Before Compilation:\n"+input);
             
             const output = Babel.transform(input, { presets: ['es2015',{minified:true}],
 "comments": false}).code;
-            console.log(output);
+            console.log("After Compilation and Minification:\n"+output);
             document.getElementById('output').innerText=  output;
             }
     </script>
